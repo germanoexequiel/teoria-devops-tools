@@ -38,7 +38,7 @@ Ansible es una herramienta de automatizacion muy poderosa que nos permite hacer 
 
 La magia de ansible se encuentra en la facilidad que nos da a la hs de instalar software o tools dentro de una maquina en especifico o en un conjunto de maquinas, permitiendonos automatizar procesos que de hacerlos de manera manual uno a uno, nos terminaria pareciendo una tarea engorrosa o tediosa, dejando lugar a la equivocacion humana y a muchos otros problemas que puedan ir surgiendo.
 
-Para evitar todo tipo de problemas o equivocaciones humanas, gracias a Ansible, podemos mediante un archivo llamado <inventori> indicarle la VM, o al grupo o conjunto de VM que querramos aprovisionar.
+Para evitar todo tipo de problemas o equivocaciones humanas, gracias a Ansible, podemos mediante un archivo llamado inventori indicarle la VM, o al grupo o conjunto de VM que querramos aprovisionar.
 
 Esto lo hacemos siguiendo una serie de parametros, clave valor, donde iremos especificando:
 
@@ -53,8 +53,9 @@ Ansible quizas paresca algo complejo, pero es bastante simple.
 
 Solo hay que entender algunos conceptos de como trsabaja ansible.
 
-El primero es entendiendo sobre la carpeta <roles>
-y el segundo es entendiendo como podemos llamar a esta carpeta <roles> mediante un archivo llamado playbook.yml
+El primero es entendiendo sobre la carpeta roles
+y el segundo es entendiendo como podemos llamar a esta carpeta roles mediante un archivo llamado playbook.yml
+
 Roles: la carpeta roles es una carpeta en la cual vamos a especificar los nombres de las carpetas con el rol que queremos instalar.
 
 Ejemplo: /roles /apache2 /task /main.yml
@@ -65,15 +66,15 @@ Dentro de la carpeta roles podemos tener varios roles como por ejemplo: apache, 
 
 Dentro de cada rol, tendremos una serie de carpetas que podemos ir editando, pero la mas importante (o por lo menos en este momento) es la carpeta task, la cual dentro contiene un archivo en formato yml, donde especificaremos mediante modulos, lo que queremos que se instale dentro de nuestras instancias (VM).
 
-Una vez que tenemos nuestro archivo <main.yml> el siguiente paso es corroborar o verificar si nuestro archivo <playbook.yml> esta bien configurado.
+Una vez que tenemos nuestro archivo <main.yml> el siguiente paso es corroborar o verificar si nuestro archivo playbook.yml esta bien configurado.
 
 Esto es depende de cada uno, quizas la mejor manera de hacerlo, es primero editar el playbook.yml con los softwares que queremos aprovisionar, para luego no olvidarnos, y a continuacion pasar a editar en la carpeta roles, uno a uno los roles que queremos agregar.
 
-Dentro de nuestro archivo <playbook.yml> especificaremos a que maquinas vamos a querer aprovisionar, y que roles queremos que esa maquina luego levante.
+Dentro de nuestro archivo playbook.yml especificaremos a que maquinas vamos a querer aprovisionar, y que roles queremos que esa maquina luego levante.
 
-Asique repasando, primero creamos un archivo llamado <inventory> en el cual indicamos la forma en la que ansible se va a comunicar con cual o cuales VM.
+Asique repasando, primero creamos un archivo llamado inventory en el cual indicamos la forma en la que ansible se va a comunicar con cual o cuales VM.
 
-Luego creamos el archivo <playbook.yml> donde indicaremos a que VM queremos aprovisionar y que <roles> vamos a querer que levante.
+Luego creamos el archivo playbook.yml donde indicaremos a que VM queremos aprovisionar y que roles vamos a querer que levante.
 
 A continuacion, dentro de la carpeta roles crearemos mediante el comando <ansible-galaxi init <nombre-del-rol>> la carpeta con el rol que vamos a estar creando.
 
